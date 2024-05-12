@@ -43,4 +43,5 @@ public class FelineTest {
         List<String> food = feline.getFood("Травоядное");
         assertEquals(herbivorousExpectedFood, food);
     }
+
 }
