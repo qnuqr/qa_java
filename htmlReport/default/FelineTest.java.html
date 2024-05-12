@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FelineTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">FelineTest.java</span></div><h1>FelineTest.java</h1><pre class="source lang-java linenums">import com.example.Feline;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.List;
+
+import static org.junit.Assert.*;
+
+<span class="nc" id="L9">public class FelineTest {</span>
+    private List&lt;String&gt; predatorExpectedFood;
+    private List&lt;String&gt; herbivorousExpectedFood;
+    //private List&lt;String&gt;
+
+    Feline feline;
+    @Before
+    public void setupFeline() {
+<span class="nc" id="L17">        feline = new Feline();</span>
+<span class="nc" id="L18">        predatorExpectedFood = List.of(&quot;Животные&quot;, &quot;Птицы&quot;, &quot;Рыба&quot;);</span>
+<span class="nc" id="L19">        herbivorousExpectedFood = List.of(&quot;Трава&quot;, &quot;Различные растения&quot;);</span>
+<span class="nc" id="L20">    }</span>
+//    @Test
+//    public void eatMeatFelineTest() throws Exception {
+//        // Устанавливаем поведение мок-объекта
+//        Feline feline_one = new Feline();
+//        Mockito.when(feline.getFood(&quot;Хищник&quot;)).thenReturn(expectedFood);
+//        assertEquals(expectedFood, feline_one.eatMeat());
+//    }
+
+    @Test
+    public void felineGetFamilyTest() {
+<span class="nc" id="L31">        assertEquals(&quot;Кошачьи&quot;, feline.getFamily());</span>
+<span class="nc" id="L32">    }</span>
+
+    @Test
+    public void felineEatMeatTest() throws Exception {
+<span class="nc" id="L36">        List&lt;String&gt; food = feline.eatMeat();</span>
+<span class="nc" id="L37">        assertNotNull(food);</span>
+<span class="nc" id="L38">        assertFalse(food.isEmpty());</span>
+<span class="nc" id="L39">    }</span>
+
+    @Test
+    public void felinePredatorGetFoodTest() throws Exception {
+<span class="nc" id="L43">        List&lt;String&gt; food = feline.getFood(&quot;Хищник&quot;);</span>
+<span class="nc" id="L44">        assertEquals(predatorExpectedFood, food);</span>
+<span class="nc" id="L45">        assertNotNull(food);</span>
+<span class="nc" id="L46">        assertFalse(food.isEmpty());</span>
+<span class="nc" id="L47">    }</span>
+
+    @Test
+    public void felineHerbivorousGetFoodTest() throws Exception {
+<span class="nc" id="L51">        List&lt;String&gt; food = feline.getFood(&quot;Травоядное&quot;);</span>
+<span class="nc" id="L52">        assertEquals(herbivorousExpectedFood, food);</span>
+<span class="nc" id="L53">    }</span>
+
+    @Test
+    public void unknownGetFood() throws Exception {
+<span class="nc" id="L57">        List&lt;String&gt; food = feline.getFood(&quot;Неизвестный вид&quot;);</span>
+
+<span class="nc" id="L59">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
