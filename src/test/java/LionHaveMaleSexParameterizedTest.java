@@ -23,5 +23,4 @@ public class LionHaveMaleSexParameterizedTest {
     public void testLionWithInvalidSex() throws Exception {
         new Lion(sex);
     }
-
 }

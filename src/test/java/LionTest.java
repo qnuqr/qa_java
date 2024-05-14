@@ -39,5 +39,4 @@ public class LionTest {
         List<String> actualFood = lion.getFood();
         assertEquals(expectedFood, actualFood);
     }
-
 }

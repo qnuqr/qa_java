@@ -1,9 +1,7 @@
 import com.example.Feline;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class FelineTest {
@@ -34,8 +32,6 @@ public class FelineTest {
     public void felinePredatorGetFoodTest() throws Exception {
         List<String> food = feline.getFood("Хищник");
         assertEquals(predatorExpectedFood, food);
-        assertNotNull(food);
-        assertFalse(food.isEmpty());
     }
 
     @Test
