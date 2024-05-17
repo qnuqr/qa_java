@@ -40,4 +40,18 @@ public class FelineTest {
         assertEquals(herbivorousExpectedFood, food);
     }
 
+    @Test
+    public void testGetKittensDefault() {
+        int kittens = feline.getKittens();
+        int expectedKittensCount = 1;
+        assertEquals(expectedKittensCount, kittens);
+    }
+
+    @Test
+    public void testGetKittensWithCount() {
+        int kittensCount = 3;
+        int kittens = feline.getKittens(kittensCount);
+        assertEquals(kittensCount, kittens);
+    }
+
 }

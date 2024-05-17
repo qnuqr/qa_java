@@ -35,5 +35,4 @@ public class CatTest {
     public void catGetSoundTest() {
         assertEquals("Мяу", cat.getSound());
     }
-
 }
