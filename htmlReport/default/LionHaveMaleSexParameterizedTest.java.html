@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LionHaveMaleSexParameterizedTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">LionHaveMaleSexParameterizedTest.java</span></div><h1>LionHaveMaleSexParameterizedTest.java</h1><pre class="source lang-java linenums">import com.example.Lion;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+@RunWith(Parameterized.class)
+public class LionHaveMaleSexParameterizedTest {
+    private final String sex;
+
+<span class="fc" id="L13">    public LionHaveMaleSexParameterizedTest(String sex) {</span>
+<span class="fc" id="L14">        this.sex = sex;</span>
+<span class="fc" id="L15">    }</span>
+
+    @Parameterized.Parameters
+    public static Collection&lt;String&gt; testData() {
+<span class="fc" id="L19">        return Arrays.asList(&quot;Женский&quot;, &quot;Мужской&quot;, &quot;Неопределенный&quot;);</span>
+    }
+
+    @Test(expected = Exception.class)
+    public void testLionWithInvalidSex() throws Exception {
+<span class="nc" id="L24">        new Lion(sex);</span>
+<span class="nc" id="L25">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
